@@ -49,13 +49,11 @@ class WebTestCase(unittest.TestCase):
 
         self.assertEqual(response.getcode(), 405)
 
-
     def test_get_sample_text_content(self):
         """
         A call to /sample.txt returns the correct body
         """
         file = 'sample.txt'
-
         local_path = os.path.join('webroot', *file.split('/'))
         web_path = '/' + file
         error_comment = "Error encountered while visiting " + web_path
